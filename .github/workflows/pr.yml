@@ -16,9 +16,9 @@ jobs:
           node-version: '^18'
 
       - name: Setup MSBuild
-        uses: microsoft/setup-msbuild@v1.0.2
+        uses: microsoft/setup-msbuild@v2
         with:
-          vs-version: 16.8
+          vs-version: '[17.0,18.0)'
 
       - name: Install node modules
         run: yarn --frozen-lockfile
