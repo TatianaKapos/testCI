@@ -15,6 +15,7 @@ import {
   Text,
   useColorScheme,
   View,
+  TextInput,
 } from 'react-native';
 
 import {
