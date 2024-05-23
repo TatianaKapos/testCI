@@ -27,5 +27,5 @@ jobs:
       - name: Install node modules
         run: yarn --frozen-lockfile
 
-      - name: Run Windows x64 release
+      - name: Run Windows ${{ matrix.platform }} ${{ matrix.configuration }}
         run: npx react-native run-windows --arch ${{ matrix.platform }} --${{ matrix.configuration }} --logging --no-packager --no-deploy
