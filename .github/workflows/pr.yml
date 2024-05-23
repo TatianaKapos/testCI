@@ -5,26 +5,26 @@ jobs:
   run-windows-tests:
   name: Build & run tests
   runs-on: windows-2019
-  
-    steps:
-      - uses: actions/checkout@v2
-        name: Checkout Code
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v1
-        with:
-          node-version: '14'
+  steps:
+    - uses: actions/checkout@v2
+      name: Checkout Code
 
-      - name: Setup MSBuild
-        uses: microsoft/setup-msbuild@v1.0.2
-        with:
-          vs-version: 16.8
+    - name: Setup Node.js
+      uses: actions/setup-node@v1
+      with:
+        node-version: '14'
 
-      - name: Install node modules
-        run: yarn --frozen-lockfile
+    - name: Setup MSBuild
+      uses: microsoft/setup-msbuild@v1.0.2
+      with:
+        vs-version: 16.8
 
-      - name: yarn build
-        run:  yarn build
+    - name: Install node modules
+      run: yarn --frozen-lockfile
 
-      - name: Run Windows x64 release
-        run: npx react-native run-windows --arch x64 --release --logging
+    - name: yarn build
+      run:  yarn build
+
+    - name: Run Windows x64 release
+      run: npx react-native run-windows --arch x64 --release --logging
